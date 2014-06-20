@@ -63,11 +63,17 @@ public class CustomActivity extends AndARActivity {
 		{
 			Global.artoolkit = super.getArtoolkit();
 			
-//			Global.topo1 = new Topo(0);
-//			Global.artoolkit.registerARObject(Global.topo1);
-//			
-//			Global.topo2 = new Topo(1);
-//			Global.artoolkit.registerARObject(Global.topo2);
+			Global.topo1 = new Topo(0);
+			Global.artoolkit.registerARObject(Global.topo1);
+			
+			Global.topo2 = new Topo(1);
+			Global.artoolkit.registerARObject(Global.topo2);
+			
+			Global.topo3 = new Topo(2);
+			Global.artoolkit.registerARObject(Global.topo3);
+			
+			Global.topo4 = new Topo(3);
+			Global.artoolkit.registerARObject(Global.topo4);
 			
 			
 			/***************************************************************************
@@ -77,14 +83,14 @@ public class CustomActivity extends AndARActivity {
 				Global.artoolkit.registerARObject(Global.topos[i]);
 			}
 			***************************************************************************/
-			int i = 0;
-			for(int j = 0; j < Global.topos.length; j++){
-				if(i>4)
-					i=0;
-				Global.topos[j] = new Topo(i);
-				Global.artoolkit.registerARObject(Global.topos[j]);
-				i++;
-			}
+//			int i = 0;
+//			for(int j = 0; j < Global.topos.length; j++){
+//				if(i>4)
+//					i=0;
+//				Global.topos[j] = new Topo(i);
+//				Global.artoolkit.registerARObject(Global.topos[j]);
+//				i++;
+//			}
 			
 			
 		}catch (Exception ex){
@@ -206,20 +212,20 @@ public class CustomActivity extends AndARActivity {
 	{
 		super.onTouchEvent(event);
 		
-		if(Global.topos[0].isVisible() && !Global.topos[1].isVisible() && !Global.topos[2].isVisible() && !Global.topos[3].isVisible()){
-			Global.topos[0].toch=!Global.topos[0].toch;
+		if(Global.topo1.isVisible() && !Global.topo2.isVisible() && !Global.topo3.isVisible() && !Global.topo4.isVisible()){
+			Global.topo1.toch=!Global.topo1.toch;
 		}
 		
-		if(Global.topos[1].isVisible() && !Global.topos[0].isVisible() && !Global.topos[2].isVisible() && !Global.topos[3].isVisible()){
-			Global.topos[1].toch=!Global.topos[1].toch;
+		if(Global.topo2.isVisible() && !Global.topo1.isVisible() && !Global.topo3.isVisible() && !Global.topo4.isVisible()){
+			Global.topo2.toch=!Global.topo2.toch;
 		}
 		
-		if(Global.topos[2].isVisible() && !Global.topos[1].isVisible() && !Global.topos[0].isVisible() && !Global.topos[3].isVisible()){
-			Global.topos[2].toch=!Global.topos[2].toch;
+		if(Global.topo3.isVisible() && !Global.topo1.isVisible() && !Global.topo2.isVisible() && !Global.topo4.isVisible()){
+			Global.topo3.toch=!Global.topo3.toch;
 		}
 		
-		if(Global.topos[3].isVisible() && !Global.topos[1].isVisible() && !Global.topos[2].isVisible() && !Global.topos[0].isVisible()){
-			Global.topos[3].toch=!Global.topos[3].toch;
+		if(Global.topo4.isVisible() && !Global.topo1.isVisible() && !Global.topo2.isVisible() && !Global.topo3.isVisible()){
+			Global.topo4.toch=!Global.topo4.toch;
 		}
 		
 		if(event.getAction()==MotionEvent.ACTION_DOWN)

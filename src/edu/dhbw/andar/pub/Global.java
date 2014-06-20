@@ -18,8 +18,8 @@ public class Global {
 	
 	public static boolean turno_jugador_1=true;	
 	
-	//public static Topo topo1,topo2;
-	public static Topo[] topos = new Topo[4];
+	public static Topo topo1,topo2,topo3,topo4;
+//	public static Topo[] topos = new Topo[4];
 	//public static Topo[] topos = new Topo[15];
 	
 	private static int xGlobalTochs = 0;
@@ -44,11 +44,11 @@ public class Global {
 		return model;
 	}
 	
-	public static void setXTochs(){
-		for(int i = 0; i < Global.topos.length; i++){
-			xGlobalTochs+=Global.topos[i].tochs;
-		}
-	}
+//	public static void setXTochs(){
+//		for(int i = 0; i < Global.topos.length; i++){
+//			xGlobalTochs+=Global.topos[i].tochs;
+//		}
+//	}
 	
 	
 	
